@@ -10,25 +10,59 @@ import XCTest
 @testable import FetchRewards
 
 class FetchRewardsTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
+    
+    typealias DisplayItem = DisplayItemsViewController.DisplayItem
+    
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let view = SpyDisplayItemsView()
+        let presenter = DisplayItemsPresenter()
+        presenter.apiService = MockAPI()
+        presenter.attachView(view: view)
+        
+        view.getItemsSuccessExpectation = expectation(description: "Get items expectation")
+        
+        presenter.getItems()
+        
+        waitForExpectations(timeout: 5, handler: nil)
+        
+        //Verify we removed the 2 items with invalid names
+        XCTAssertEqual(view.items?.count, 3)
+        
+        //Test the ordering of the items
+        XCTAssertEqual(DisplayItem(listId: "List Id: 1", name: "Item 1"), view.items?[0])
+        XCTAssertEqual(DisplayItem(listId: "List Id: 2", name: "Item 20"), view.items?[1])
+        XCTAssertEqual(DisplayItem(listId: "List Id: 2", name: "Item 3"), view.items?[2])
+    }
+    
+    class SpyDisplayItemsView: DisplayItemsView {
+        var getItemsSuccessExpectation: XCTestExpectation?
+        var items: [DisplayItem]?
+        func getItemsSuccess(items: [DisplayItem]) {
+            self.items = items
+            getItemsSuccessExpectation?.fulfill()
+        }
+        
+        func getItemsError(error: Error) {}
+        
+        func showSpinner() {}
+        
+        func hideSpinner() {}
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+
+    struct MockAPI: APIInterface {
+        func get<T: Codable>(router: Router, completion: @escaping (Result<[T], Error>) -> ()) {
+            // Mock data for the business logic
+            let items: [T] = [Item(id: 1, listId: 1, name: nil) as! T,
+                             Item(id: 2, listId: 1, name: "") as! T,
+                             Item(id: 3, listId: 1, name: "Item 1") as! T,
+                             Item(id: 4, listId: 2, name: "Item 3") as! T,
+                             Item(id: 5, listId: 2, name: "Item 20") as! T]
+            
+            switch router {
+            case .GetItems:
+                completion(.success(items))
+            }
         }
     }
-
 }

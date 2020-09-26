@@ -8,13 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DisplayItemsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        FetchRewardsAPI.shared.get(router: .GetItems) { (result: Result<[Item], Error>) in
+            switch result {
+            case .success(let items):
+                print(items)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
     }
-
-
 }
 

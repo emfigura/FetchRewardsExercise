@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		7794879B251FC10F002C3277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794879A251FC10F002C3277 /* AppDelegate.swift */; };
 		7794879D251FC10F002C3277 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794879C251FC10F002C3277 /* SceneDelegate.swift */; };
-		7794879F251FC10F002C3277 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794879E251FC10F002C3277 /* ViewController.swift */; };
+		7794879F251FC10F002C3277 /* DisplayItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7794879E251FC10F002C3277 /* DisplayItemsViewController.swift */; };
 		779487A2251FC10F002C3277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779487A0251FC10F002C3277 /* Main.storyboard */; };
 		779487A4251FC110002C3277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 779487A3251FC110002C3277 /* Assets.xcassets */; };
 		779487A7251FC110002C3277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 779487A5251FC110002C3277 /* LaunchScreen.storyboard */; };
 		779487B2251FC111002C3277 /* FetchRewardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779487B1251FC111002C3277 /* FetchRewardsTests.swift */; };
 		779487BD251FC111002C3277 /* FetchRewardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779487BC251FC111002C3277 /* FetchRewardsUITests.swift */; };
+		779487CB251FC19F002C3277 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779487CA251FC19F002C3277 /* Router.swift */; };
+		779487CD251FC242002C3277 /* FetchRewardsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779487CC251FC242002C3277 /* FetchRewardsAPI.swift */; };
+		779487CF251FC2DC002C3277 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779487CE251FC2DC002C3277 /* Item.swift */; };
+		779487D1251FC5D1002C3277 /* DisplayItemsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779487D0251FC5D1002C3277 /* DisplayItemsPresenter.swift */; };
+		779487D4251FCC31002C3277 /* DisplayItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779487D2251FCC31002C3277 /* DisplayItemTableViewCell.swift */; };
+		779487D5251FCC31002C3277 /* DisplayItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779487D3251FCC31002C3277 /* DisplayItemTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,7 @@
 		77948797251FC10F002C3277 /* FetchRewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchRewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7794879A251FC10F002C3277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7794879C251FC10F002C3277 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7794879E251FC10F002C3277 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7794879E251FC10F002C3277 /* DisplayItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayItemsViewController.swift; sourceTree = "<group>"; };
 		779487A1251FC10F002C3277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		779487A3251FC110002C3277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		779487A6251FC110002C3277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		779487B8251FC111002C3277 /* FetchRewardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchRewardsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		779487BC251FC111002C3277 /* FetchRewardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsUITests.swift; sourceTree = "<group>"; };
 		779487BE251FC111002C3277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		779487CA251FC19F002C3277 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		779487CC251FC242002C3277 /* FetchRewardsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRewardsAPI.swift; sourceTree = "<group>"; };
+		779487CE251FC2DC002C3277 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		779487D0251FC5D1002C3277 /* DisplayItemsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayItemsPresenter.swift; sourceTree = "<group>"; };
+		779487D2251FCC31002C3277 /* DisplayItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayItemTableViewCell.swift; sourceTree = "<group>"; };
+		779487D3251FCC31002C3277 /* DisplayItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DisplayItemTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +111,10 @@
 		77948799251FC10F002C3277 /* FetchRewards */ = {
 			isa = PBXGroup;
 			children = (
+				779487D7251FEC10002C3277 /* DisplayItems */,
+				779487D6251FEBFA002C3277 /* Networking */,
 				7794879A251FC10F002C3277 /* AppDelegate.swift */,
 				7794879C251FC10F002C3277 /* SceneDelegate.swift */,
-				7794879E251FC10F002C3277 /* ViewController.swift */,
 				779487A0251FC10F002C3277 /* Main.storyboard */,
 				779487A3251FC110002C3277 /* Assets.xcassets */,
 				779487A5251FC110002C3277 /* LaunchScreen.storyboard */,
@@ -126,6 +139,43 @@
 				779487BE251FC111002C3277 /* Info.plist */,
 			);
 			path = FetchRewardsUITests;
+			sourceTree = "<group>";
+		};
+		779487D6251FEBFA002C3277 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				779487D8251FEC2D002C3277 /* Models */,
+				779487CA251FC19F002C3277 /* Router.swift */,
+				779487CC251FC242002C3277 /* FetchRewardsAPI.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		779487D7251FEC10002C3277 /* DisplayItems */ = {
+			isa = PBXGroup;
+			children = (
+				779487D9251FEC4A002C3277 /* Cells */,
+				7794879E251FC10F002C3277 /* DisplayItemsViewController.swift */,
+				779487D0251FC5D1002C3277 /* DisplayItemsPresenter.swift */,
+			);
+			path = DisplayItems;
+			sourceTree = "<group>";
+		};
+		779487D8251FEC2D002C3277 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				779487CE251FC2DC002C3277 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		779487D9251FEC4A002C3277 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				779487D2251FCC31002C3277 /* DisplayItemTableViewCell.swift */,
+				779487D3251FCC31002C3277 /* DisplayItemTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				779487A7251FC110002C3277 /* LaunchScreen.storyboard in Resources */,
+				779487D5251FCC31002C3277 /* DisplayItemTableViewCell.xib in Resources */,
 				779487A4251FC110002C3277 /* Assets.xcassets in Resources */,
 				779487A2251FC10F002C3277 /* Main.storyboard in Resources */,
 			);
@@ -259,9 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7794879F251FC10F002C3277 /* ViewController.swift in Sources */,
+				779487CB251FC19F002C3277 /* Router.swift in Sources */,
+				779487D4251FCC31002C3277 /* DisplayItemTableViewCell.swift in Sources */,
+				779487CD251FC242002C3277 /* FetchRewardsAPI.swift in Sources */,
+				7794879F251FC10F002C3277 /* DisplayItemsViewController.swift in Sources */,
 				7794879B251FC10F002C3277 /* AppDelegate.swift in Sources */,
+				779487CF251FC2DC002C3277 /* Item.swift in Sources */,
 				7794879D251FC10F002C3277 /* SceneDelegate.swift in Sources */,
+				779487D1251FC5D1002C3277 /* DisplayItemsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
